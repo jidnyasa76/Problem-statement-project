@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div class="cal">
+    <h1>CALCULATOR</h1>
+    </div>
+  
+    <div class="container"> 
+
+</body>
+</html><form name="f"> 
+    <div class="display">
+    <h3>Enter 1st no:</h3>   <input type="text" name="a" id="input1">
+     <h3>Enter 2nd no:</h3>   <input type="text" name="b" id="input2" onclick="setActiveInput('input2')">
+   </div>
+   <center><div class="display1">
+    <h3>Your Result:</h3> <input type="text" name="c" readonly><br>
+   </div></center>
+    <button type="button" onclick="fun1()">*</button>
+    <button type="button" onclick="fun2()">-</button>
+    <button type="button" onclick="fun3()">+</button>
+    <button type="button" onclick="fun4()">/</button>
+    <button type="button" onclick="clearFields()">Clear</button>
+
+
+    <div>
+        <button type="button" onclick="setInputValue(1)">1</button>
+        <button type="button" onclick="setInputValue(2)">2</button>
+        <button type="button" onclick="setInputValue(3)">3</button>
+        <button type="button" onclick="setInputValue(4)">4</button>
+        <button type="button" onclick="setInputValue(5)">5</button>
+        <button type="button" onclick="setInputValue(6)">6</button>
+        <button type="button" onclick="setInputValue(7)">7</button>
+        <button type="button" onclick="setInputValue(8)">8</button>
+        <button type="button" onclick="setInputValue(9)">9</button>
+        <button type="button" onclick="setInputValue(0)">0</button>
+    </div>
+    
+
+</form>  
+
+<script>
+
+
+let activeInput = 'input1';
+
+    // Function to set the active input field
+    function setActiveInput(inputId) {
+        activeInput = inputId;
+    }
+
+    // Function to set the value in the active input field
+    function setInputValue(value) {
+        document.getElementById(activeInput).value += value;
+    } 
+
+    function fun1() {
+        var mul1 = parseInt(document.f.a.value);
+        var mul2 = parseInt(document.f.b.value);
+        document.f.c.value = mul1 * mul2;
+    }
+
+    function fun2() {
+        var sub1 = parseInt(document.f.a.value);
+        var sub2 = parseInt(document.f.b.value);
+        document.f.c.value = sub1 - sub2;
+    }
+
+    function fun3() {
+        var add1 = parseInt(document.f.a.value);
+        var add2 = parseInt(document.f.b.value);
+        document.f.c.value = add1 + add2;
+    }
+
+    function fun4() {
+        var divi1 = parseInt(document.f.a.value);
+        var divi2 = parseInt(document.f.b.value);
+        if (divi2 != 0) {
+            document.f.c.value = divi1 / divi2;
+        } else {
+            document.f.c.value = "Cannot divide by zero";
+        }
+    }
+
+    // Function to clear all the input fields
+    function clearFields() {
+        document.f.a.value = "";
+        document.f.b.value = "";
+        document.f.c.value = "";
+    // Reset focus to the first input field
+    document.getElementById('input1').focus();
+        // Set active input back to the first input
+        setActiveInput('input1');
+    
+    
+    }
+
+</script>
