@@ -49,12 +49,12 @@
 
 let activeInput = 'input1';
 
-    // Function to set the active input field
+    
     function setActiveInput(inputId) {
         activeInput = inputId;
     }
 
-    // Function to set the value in the active input field
+   
     function setInputValue(value) {
         document.getElementById(activeInput).value += value;
     } 
@@ -87,14 +87,12 @@ let activeInput = 'input1';
         }
     }
 
-    // Function to clear all the input fields
     function clearFields() {
         document.f.a.value = "";
         document.f.b.value = "";
         document.f.c.value = "";
-    // Reset focus to the first input field
+  
     document.getElementById('input1').focus();
-        // Set active input back to the first input
         setActiveInput('input1');
     
     
